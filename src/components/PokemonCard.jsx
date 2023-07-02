@@ -21,11 +21,11 @@ const PokemonCard = ({ card }) => {
                 whileHover={{ scale: [null, 1.1, 1.1]}}
                 transition={{ duration: 0.3}}
             >
-                <div className='flex  w-[20rem] h-[25rem] rounded-[10px] justify-around shadow-2xl p-10 bg-black bg-opacity-30 hover:bg-gradient-to-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3  ml-10 mt-5 hover:cursor-pointer'>
+                <div className='flex  w-[15rem] h-[20rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-to- hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3  ml-10 mt-5 hover:cursor-pointer'>
                     <div className='flex justify-between'>
 
                         <div>
-                            <h2 className={`text-lg    text-gray-100 font-semibold`}>{card.supertype}</h2>
+                            <h2 className={`text-md  text-gray-100 font-semibold`}>{card.supertype}</h2>
 
                             <p className='text-gray-400 text-sm'>
                                 {card.subtypes[0]}
@@ -33,7 +33,7 @@ const PokemonCard = ({ card }) => {
                         </div>
                         
                     
-                        {card.cardmarket && <p className='text-gray-200 font-bold text-transparen bg-clip-text bg-gradient-to-br from-purple-600 to-purple-400 font-white'>{`$${card.cardmarket.prices.averageSellPrice}`}</p>
+                        {card.cardmarket && <p className='text-gray-200 font-bold text-transparen bg-clip-text bg-gradient-to-br from-purple-600 to-purple-400 font-white text-sm'>{`$${card.cardmarket.prices.averageSellPrice}`}</p>
                     }
                     
                     </div>
@@ -49,12 +49,16 @@ const PokemonCard = ({ card }) => {
                         <h1 className='font-medium text-md text-gray-200'>
                         {card.name}
                         </h1>
-                    
-                        <div className={`flex items-center gap-1 bg-gradient-to-r ${rarities[card.rarity]} rounded-lg px-[.5rem] h-[1rem] py-[0.5rem] italic`}>
+
+                        {card.rarity && (
+                            <div className={`flex items-center gap-1 bg-gradient-to-r ${rarities[card.rarity]} rounded-lg px-[.5rem] h-[1rem] py-[0.5rem] italic`}>
                     
                                 <p className={`text-white  text-xs`}>{card.rarity}</p>
                     
-                        </div>
+                            </div>
+                        ) }
+                    
+                        
                 
                     </div>
             
