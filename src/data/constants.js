@@ -1,6 +1,6 @@
 export const rarities = {
     "Amazing Rare": 'from-gray-200 via-blue-400 to-purple-500',
-    "Common": 'from-yellow-300 via-blue-400 to-yellow-300',
+    "Common": 'from-pink-400 via-orange-400 to-yellow-400',
     "LEGEND": 'from-green-300 via-pink-400 via-purple-300 to-green-300',
     "Promo": 'from-red-200 via-purple-600 to-blue-400',
     "Rare": 'to-purple-800  from-blue-500',
@@ -21,13 +21,7 @@ export const rarities = {
     "Rare Shiny": '',
     "Rare Shiny GX": '',
     "Rare Ultra": '',
-    "Uncommon": ''
-}
-
-export const supertypes = {
-    "Pokémon": 'from-yellow-300 via-yellow-500 to-yellow-300',
-    "Trainer": 'from-blue-200 via-blue-500 to-blue-200',
-    "Energy": '',
+    "Uncommon": 'from-purple-400 via-pink-400 to-purple-400'
 }
 
 export const types = {

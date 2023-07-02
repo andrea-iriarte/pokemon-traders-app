@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { rarities, types, supertypes } from '../data/constants';
+import { rarities, types } from '../data/constants';
 import { motion } from 'framer-motion'
 
 
@@ -14,22 +14,30 @@ const Type = ({ icon, color, type }) => {
 }
 
 const PokemonCard = ({ card }) => {
+    
     return (
         <>
         { card && (   
             <motion.div
                 whileHover={{ scale: [null, 1.1, 1.1]}}
                 transition={{ duration: 0.3}}
+                className=''
             >
-                <div className='flex  w-[15rem] h-[20rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-to- hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3  ml-10 mt-5 hover:cursor-pointer'>
+                <div className='flex  w-[15rem] h-[22rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-to-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3  ml-10 mt-5 hover:cursor-pointer'>
                     <div className='flex justify-between'>
 
                         <div>
-                            <h2 className={`text-md  text-gray-100 font-semibold`}>{card.supertype}</h2>
-
-                            <p className='text-gray-400 text-sm'>
-                                {card.subtypes[0]}
-                            </p>
+                            {card.supertype && (
+                                <h2 className={`text-md  text-gray-100 font-semibold`}>{card.supertype}</h2>
+                            )
+                            }
+                            
+                            {card.subtypes && (
+                                <p className='text-gray-400 text-sm'>
+                                    {card.subtypes[0]}
+                                </p>
+                            )}
+                            
                         </div>
                         
                     
@@ -37,8 +45,14 @@ const PokemonCard = ({ card }) => {
                     }
                     
                     </div>
+
+                    <motion.div>
+                        
+                    </motion.div>
                     
-                    <div className={` rounded-[10px]  h-[70%]`}>
+                    <div 
+                    
+                    className={` rounded-[10px]  h-[70%]`}>
                     
                         <img src={card.images.small} alt="" className=' rounded-[10px] shadow-xl h-[100%] w-[100%]'/>
                     
