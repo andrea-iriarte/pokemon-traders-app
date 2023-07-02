@@ -23,7 +23,7 @@ const PokemonCard = ({ card }) => {
                 transition={{ duration: 0.3}}
                 className=''
             >
-                <div className='flex  w-[15rem] h-[22rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-to-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3  ml-10 mt-5 hover:cursor-pointer'>
+                <div className='flex  w-[15rem] h-[22rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-to-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer'>
                     <div className='flex justify-between'>
 
                         <div>
@@ -60,9 +60,9 @@ const PokemonCard = ({ card }) => {
                 
                     <div className='flex justify-between items-center mb-[-.6rem]'>
                     
-                        <h1 className='font-medium text-md text-gray-200'>
-                        {card.name}
-                        </h1>
+                        <h2 className='font-medium text-md text-gray-200'>
+                        {card.name.substr(0, 11)}
+                        </h2>
 
                         {card.rarity && (
                             <div className={`flex items-center gap-1 bg-gradient-to-r ${rarities[card.rarity]} rounded-lg px-[.5rem] h-[1rem] py-[0.5rem] italic`}>

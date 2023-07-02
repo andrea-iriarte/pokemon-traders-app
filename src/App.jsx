@@ -49,10 +49,10 @@ const App = () => {
     }, [search], []) 
     console.log(cards)
   return (
-    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-pink-900 to-black flex  justify-items-start flex-wrap pb-[4rem]'>
+    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-items-start flex-wrap p-7 pb-[4rem]'>
       <Header setSearch={setSearch} />
 
-      <div className='flex flex-wrap gap-1 justify-start'>
+      <div className='flex flex-wrap gap-6 justify-center'>
         {filteredResults.map((card) => <PokemonCard card={card} key={card.id}/>)}
       </div>
       

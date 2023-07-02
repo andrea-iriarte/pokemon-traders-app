@@ -7,9 +7,9 @@ const Header = ({ setSearch }) => {
     
   return (
     
-    <header className='h-[3rem] bg-black  bg-opacity-0 flex justify-between items-center w-full p-7 '>
-        <h1 className='text-center text-2xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500  
-        via-blue-400 to-purple-500 cursor-pointer text-gray-100 tracking-tight'>
+    <header className='h-[3rem] bg-black  bg-opacity-0 flex justify-between items-center w-full mb-7 '>
+        <h1 className='text-center text-4xl text-transparent bg-clip-text bg-gradient-to-r from-green-400  
+        via-purple-500 to-green-400 cursor-pointer text-gray-100 tracking-tight'>
             Pokemon Traders
         </h1>
 
