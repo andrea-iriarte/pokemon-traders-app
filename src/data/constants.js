@@ -16,7 +16,7 @@ export const rarities = {
     "Rare Prime": '',
     "Rare Prism Star": '',
     "Rare Rainbow": '',
-    "Rare Secret": '',
+    "Rare Secret": 'from-pink-900 via-purple-900 to-green-400',
     "Rare Shining": '',
     "Rare Shiny": '',
     "Rare Shiny GX": '',
