@@ -8,7 +8,7 @@ const Type = ({ icon, color, type }) => {
     return (
         <div className={` rounded-full  flex gap-[0.2rem] items-center `}>
             <img src={icon} alt="" className='[h-[.75rem] w-[.75rem]' />
-            <p className={`${color} italic font-semi`}>{type}</p>
+            <p className={`${color} italic `}>{type}</p>
         </div>
     )
 }
@@ -22,7 +22,7 @@ const PokemonCardFront = ({ card }) => {
 
                     <div>
                         {card.supertype && (
-                            <h2 className={`text-md  text-gray-100 font-semibold`}>{card.supertype}</h2>
+                            <h2 className={`sm:text-base text-lg text-gray-100 font-semibold`}>{card.supertype}</h2>
                         )
                         }
                         
@@ -50,7 +50,7 @@ const PokemonCardFront = ({ card }) => {
             
                 <div className='flex justify-between items-center mb-[-.6rem]'>
                 
-                    <h2 className='font-medium text-md text-gray-200'>
+                    <h2 className='font-medium sm:text-base text-lg text-gray-200'>
                     {card.name.substr(0, 11)}
                     </h2>
 
@@ -68,7 +68,7 @@ const PokemonCardFront = ({ card }) => {
         
                 <div className='flex justify-start gap-2.5'>
                     {card.types && card.types.map((type) => (
-                        <div className='flex gap-2 items-center text-xs'>
+                        <div className='flex gap-2 items-center sm:text-xs text-sm'>
                             <Type icon={types[type].icon} color={types[type].color} type={type}/>   
                         </div>
                 
@@ -95,7 +95,7 @@ const PokemonCard = ({ card }) => {
         <>
             { card && (   
             
-                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[21rem] h-[100%] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => setIsClicked(prev => !prev)}>
+                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[21rem] h-[23rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
                         {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
 
