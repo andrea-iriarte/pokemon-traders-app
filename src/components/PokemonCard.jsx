@@ -17,9 +17,7 @@ const PokemonCardFront = ({ card }) => {
     
     return (
         <>
-        { card && (   
-           
-            <div className='flex  w-[15rem] h-[21rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer '>
+        
                 <div className='flex justify-between'>
 
                     <div>
@@ -41,11 +39,7 @@ const PokemonCardFront = ({ card }) => {
                 }
                 
                 </div>
-
-                <motion.div>
-                    
-                </motion.div>
-                
+ 
                 <div 
                 
                 className={` rounded-[10px]  h-[70%]`}>
@@ -81,10 +75,7 @@ const PokemonCardFront = ({ card }) => {
                     ))}
                 </div>
                 
-            </div>
-          
-            
-            )} </>
+             </>
     )
   }
 
@@ -98,11 +89,20 @@ const PokemonCardBack = ({ card }) => {
 
 const PokemonCard = ({ card }) => {
 
-    const [isClicked, setIsClicked] = useState(true);
+    const [isClicked, setIsClicked] = useState(false);
     return (
+
         <>
-            {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
+            { card && (   
+            
+                <div className='flex  sm:w-[15rem] w-[100%] sm:h-[21rem] h-[100%] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => setIsClicked(prev => !prev)}>
+                    
+                        {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
+
+                </div> 
+            )}
         </>
+        
         
     )
 }
