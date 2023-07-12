@@ -35,7 +35,7 @@ const PokemonCardFront = ({ card }) => {
                     </div>
                     
                 
-                    {card.cardmarket && <p className='text-gray-200 font-bold text-transparen bg-clip-text bg-gradient-to-br from-purple-600 to-purple-400 font-white text-sm'>{`$${card.cardmarket.prices.averageSellPrice}`}</p>
+                    {card.cardmarket && <p className='text-gray-200 font-bold text-transparen bg-clip-text bg-gradient-to-br from-purple-600 to-purple-400 font-white sm:text-sm text-base'>{`$${card.cardmarket.prices.averageSellPrice}`}</p>
                 }
                 
                 </div>
