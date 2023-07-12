@@ -95,7 +95,7 @@ const PokemonCard = ({ card }) => {
         <>
             { card && (   
             
-                <div className='flex  sm:w-[15rem] w-[100%] sm:h-[21rem] h-[100%] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => setIsClicked(prev => !prev)}>
+                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[21rem] h-[100%] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => setIsClicked(prev => !prev)}>
                     
                         {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
 
