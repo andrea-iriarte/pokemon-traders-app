@@ -71,6 +71,13 @@ export const types = {
     }
 }
 
+export const searchParameters = [
+    {
+        parameter: "Supertype",
+        variants: ["Pokemon", "Trainer", "Energy"]
+    },
+]
+
 //split into single words
 //all rare halo rarities will share design for those words but
 //will differ with their endings\\

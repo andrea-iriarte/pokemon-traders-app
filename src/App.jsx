@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import PokemonCard from './components/PokemonCard'
-import { rarities } from './data/constants'
+import Pagination from './components/Pagination';
 import Header from './components/Header';
 import { motion } from 'framer-motion';
+import SearchParameters from './components/SearchParameters';
 
 
 const apiKey = 'fd75039a-5c0e-443f-8043-41195c20aad3';
@@ -16,34 +17,35 @@ const options = {
 const App = () => {
 
 
-  const apiURL = "https://api.pokemontcg.io/v2/cards"
+  const apiURL = "https://api.pokemontcg.io/v2/cards?q=supertype:"
 
   const [cards, setCards] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
+  const [page, setPage] = useState(1);
+  const [parameters, setParameters] = useState({
+    supertype: "pokemon"
+  });
+  
 
+  const apiRequest = async (parameters) => {
+    const data = await fetch(`${apiURL}${parameters.supertype}&page=${page}&pageSize=24`, options);
+    
+    const result = await data.json();
+    console.log(result);
+ 
+    setCards([...result.data]);
+    
+  }
+  
   useEffect(() => {
 
-      const apiRequest = async () => {
-        const data = await fetch(apiURL, options);
-        const trainers = await fetch(`${apiURL}?q=supertype:trainer`);
-        const trainersSet = await trainers.json();
-        const energy = await fetch(`${apiURL}?q=supertype:energy`);
-        const energySet = await energy.json();
-        
-        const result = await data.json();
-        console.log(result);
-        
-        setCards([...result.data, ...trainersSet.data, ...energySet.data]);
-        
-      }
-      
       try {
-        apiRequest();
-      } catch(e){
+        apiRequest(parameters);
+      } catch(e) {
         console.log(e.error.message);
       }
       
-    }, []);
+    }, [page, parameters]);
 
     const [search, setSearch] = useState('');
 
@@ -56,6 +58,7 @@ const App = () => {
   return (
     <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-items-start flex-wrap p-7 pb-[4rem]'>
       <Header setSearch={setSearch} />
+      {/* <SearchParameters setParameters={setParameters} parameters={parameters}/> */}
 
       <div className='flex flex-wrap gap-6 justify-center'>
         {filteredResults.map((card) => (
@@ -69,6 +72,8 @@ const App = () => {
         </motion.div>
         ))}
       </div>
+
+      <Pagination page={page} setPage={setPage}/>
       
     </div>
   )

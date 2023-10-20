@@ -42,7 +42,7 @@ const PokemonCardFront = ({ card }) => {
  
                 <div 
                 
-                className={` rounded-[10px]  h-[70%]`}>
+                className={` rounded-[10px]  h-[80%]`}>
                 
                     <img src={card.images.small} alt="" className=' rounded-[10px] shadow-xl h-[100%] w-[100%]'/>
                 
@@ -95,7 +95,7 @@ const PokemonCard = ({ card }) => {
         <>
             { card && (   
             
-                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[21rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-10 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
+                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[22rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-12 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
                         {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
 
