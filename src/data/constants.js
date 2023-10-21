@@ -73,8 +73,12 @@ export const types = {
 
 export const searchParameters = [
     {
-        parameter: "Supertype",
+        name: "supertype",
         variants: ["Pokemon", "Trainer", "Energy"]
+    },
+    {
+        name: "type",
+        variants: ["Colorless", "Darkness", "Dragon", "Fairy", "Fighting", "Fire", "Grass", "Lightning", "Metal", "Psychic", "Water"]
     },
 ]
 

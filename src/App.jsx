@@ -23,10 +23,11 @@ const App = () => {
   const [filteredResults, setFilteredResults] = useState([]);
   const [page, setPage] = useState(1);
   const [parameters, setParameters] = useState({
-    supertype: "pokemon"
+    supertype: "pokemon",
+    type: null
   });
+  const [search, setSearch] = useState('');
   
-
   const apiRequest = async (parameters) => {
     const data = await fetch(`${apiURL}${parameters.supertype}&page=${page}&pageSize=24`, options);
     
@@ -45,32 +46,32 @@ const App = () => {
         console.log(e.error.message);
       }
       
-    }, [page, parameters]);
+    }, [page, parameters.supertype]);
 
-    const [search, setSearch] = useState('');
+    
 
     useEffect(() => {
         const results = cards.filter(card => card.name.toLowerCase().includes(search.toLowerCase()));
 
         setFilteredResults(results);
-    }, [search, []]) 
-    console.log(cards)
+    }, [search, page, parameters.supertype, [] ]) 
+
+  
+    
   return (
-    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-items-start flex-wrap p-7 pb-[4rem]'>
-      <Header setSearch={setSearch} />
-      {/* <SearchParameters setParameters={setParameters} parameters={parameters}/> */}
+    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-start flex-wrap p-7 pb-[4rem]'>
+      <Header setSearch={setSearch} setPage={setPage}/>
+      
+      <SearchParameters setParameters={setParameters} parameters={parameters} setPage={setPage} />
 
       <div className='flex flex-wrap gap-6 justify-center'>
-        {filteredResults.map((card) => (
-          <motion.div
-          whileHover={{ scale: [null, 1.1, 1.1]}}
-          transition={{ duration: 0.3}}
-          
-          className=''
-        >
-          <PokemonCard card={card} key={card.id}/>
-        </motion.div>
-        ))}
+        {filteredResults ? (filteredResults.map((card) => (
+          <PokemonCard card={card} />
+        ))) : (
+          cards.map((card) => (
+            <PokemonCard card={card} />
+          ))
+        )}
       </div>
 
       <Pagination page={page} setPage={setPage}/>

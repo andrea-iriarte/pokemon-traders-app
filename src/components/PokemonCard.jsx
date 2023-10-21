@@ -50,8 +50,8 @@ const PokemonCardFront = ({ card }) => {
             
                 <div className='flex justify-between items-center mb-[-.6rem]'>
                 
-                    <h2 className='font-medium sm:text-base text-lg text-gray-200'>
-                    {card.name.substr(0, 11)}
+                    <h2 className='font-medium sm:text-sm text-lg text-gray-200'>
+                    {card.name.substr(0, 12)}
                     </h2>
 
                     {card.rarity && (
@@ -95,11 +95,17 @@ const PokemonCard = ({ card }) => {
         <>
             { card && (   
             
-                <div className='flex  sm:w-[15rem] w-[20rem] sm:h-[22rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-12 px-5 bg-black bg-opacity-30 hover:bg-gradient-t-br hover:from-black hover:via-indigo-800 hover:to-pink-600 hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
+                <motion.div 
+                    whileHover={{ scale: [null, 1.1, 1.05]}}
+                    transition={{ duration: 0.1}}
+                    key={card.id}
+                    className='flex  sm:w-[15rem] w-[20rem] sm:h-[20rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-30 hover:bg-gradientto-br hover:from-green-400/10 hover:via-indigo-800/20 hover:to-pink-600/20 
+                    hover:border-t-[6px] hover:border-green-400/40
+                    hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
                         {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
 
-                </div> 
+                </motion.div> 
             )}
         </>
         

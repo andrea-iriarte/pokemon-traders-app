@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-const Header = ({ setSearch }) => {
+const Header = ({ setSearch, setPage }) => {
     
-        
+  const reset = () => {
+    setSearch('');
+    setPage(1);
+  }
     
   return (
     
-    <header className='h-[3rem] bg-black  bg-opacity-0 flex flex-col gap-4 md:gap-0 justify-between items-center w-full  md:flex-row  mb-[4rem] md:mb-4'>
+    <header className='h-[3rem] bg-black  bg-opacity-0 flex flex-col gap-4 md:gap-0 justify-between items-center w-full  md:flex-row  mb-[4rem] md:mb-4 '>
         <h1 className='text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-400  
-        via-purple-500 to-green-400 cursor-pointer  tracking-tight ' onClick={() => setSearch('')}>
+        via-purple-500 to-green-400 cursor-pointer  tracking-tight ' onClick={reset}>
             Pokemon Traders
         </h1>
 
