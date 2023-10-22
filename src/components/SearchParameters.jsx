@@ -12,7 +12,7 @@ const DropdownMenu = ({ param, setParameters, parameters, setPage }) => {
         newParams[param.name] = item;
         console.log(newParams);
         setParameters(newParams);
-        setPage(1);
+        //setPage(1);
         setIsClicked(false);
     }
     

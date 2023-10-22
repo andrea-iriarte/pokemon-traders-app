@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState } from 'react'
 import { rarities, types } from '../data/constants';
 import { motion } from 'framer-motion'
 
@@ -100,7 +100,7 @@ const PokemonCard = ({ card }) => {
                     transition={{ duration: 0.1}}
                     key={card.id}
                     className='flex  sm:w-[15rem] w-[20rem] sm:h-[20rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-30 hover:bg-gradientto-br hover:from-green-400/10 hover:via-indigo-800/20 hover:to-pink-600/20 
-                    hover:border-t-[6px] hover:border-green-400/40
+                    
                     hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
                         {(isClicked) ? <PokemonCardBack card={card} /> : <PokemonCardFront card={card} />}
