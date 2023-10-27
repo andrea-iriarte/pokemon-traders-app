@@ -14,3 +14,29 @@ body {
 h1 {
     font-family: 'Chakra Petch', sans-serif;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: hsl(242, 0, 50%);
+    border-radius: 10px;
+    
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(242, 0, 50%);
+    border-radius: 16px;
+    height: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(156, 67%, 60%);
+  }

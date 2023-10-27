@@ -13,11 +13,13 @@
     "@auth0/auth0-react": "^2.2.1",
     "framer-motion": "^10.12.18",
     "mongodb": "^6.2.0",
+    "mongoose": "^7.6.3",
     "pokemontcgsdk": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.17.0",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

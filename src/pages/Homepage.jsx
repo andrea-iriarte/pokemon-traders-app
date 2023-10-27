@@ -16,14 +16,24 @@ const Homepage = () => {
   const [page, setPage] = useState(1);
   const [parameters, setParameters] = useState({
     supertype: "pokemon",
-    type: null
+    type: null,
+    subtype: null,
+    rarity: null
   });
   const [search, setSearch] = useState('');
 
+  const { supertype, type } = parameters;
+
+ 
+
   useEffect (() => {
 
+    const query = `${parameters.type ? "types:".concat(parameters.type) : ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} supertype:${parameters.supertype} `;
+    const apiUrl = "https://api.pokemontcg.io/v2/cards?q=".concat(query);
+
     const apiRequest = async () => {
-      const data = await pokemon.card.where({ q: 'supertype:'.concat(parameters.supertype), pageSize: 24, page: page});
+      const data = await pokemon.card.where({ q: query, pageSize: 24, page: page});
+      //const data = fetch(apiUrl, apiKey)
       const result = data.data;
        setCards([...result]);
     }
@@ -32,20 +42,21 @@ const Homepage = () => {
 
     console.log(parameters.supertype);
     console.log(page);
-  }, [page, parameters.supertype])
+  }, [page, supertype, type])
   
-  useEffect(() => {
-      const results = cards.filter(card => card.name.toLowerCase().includes(search.toLowerCase()));
 
-      setFilteredResults(results);
-  }, [search, page, parameters.supertype]) 
+ useEffect(() => {
+    const results = cards.filter(card => card.name.toLowerCase().includes(search.toLowerCase()));
+
+    setFilteredResults(results);
+}, [search, page, supertype,]) 
 
   
     
   return (
     <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-start flex-wrap p-7 pb-[4rem]'>
       
-      <Header setSearch={setSearch} setPage={setPage}/>
+      <Header setSearch={setSearch} setPage={setPage} setParameters={setParameters} parameters={parameters}/>
       
       <SearchParameters setParameters={setParameters} parameters={parameters} setPage={setPage} />
 

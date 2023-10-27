@@ -18,7 +18,7 @@ export const rarities = {
     "Rare Rainbow": '',
     "Rare Secret": 'from-pink-900 via-purple-900 to-green-400',
     "Rare Shining": '',
-    "Rare Shiny": '',
+    "Rare Shiny": 'from-gray-500 via-teal-500 to-gray-500',
     "Rare Shiny GX": '',
     "Rare Ultra": '',
     "Uncommon": 'from-purple-400 via-pink-400 to-purple-400'
@@ -71,16 +71,9 @@ export const types = {
     }
 }
 
-export const searchParameters = [
-    {
-        name: "supertype",
-        variants: ["Pokemon", "Trainer", "Energy"]
-    },
-    {
-        name: "type",
-        variants: ["Colorless", "Darkness", "Dragon", "Fairy", "Fighting", "Fire", "Grass", "Lightning", "Metal", "Psychic", "Water"]
-    },
-]
+
+
+    
 
 //split into single words
 //all rare halo rarities will share design for those words but

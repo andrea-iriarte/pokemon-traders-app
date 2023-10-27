@@ -51,7 +51,7 @@ const PokemonCardFront = ({ card }) => {
                 <div className='flex justify-between items-center mb-[-.6rem]'>
                 
                     <h2 className='font-medium sm:text-sm text-lg text-gray-200'>
-                    {card.name.substr(0, 12)}
+                    {card.name.substr(0, 11)}
                     </h2>
 
                     {card.rarity && (
@@ -68,7 +68,7 @@ const PokemonCardFront = ({ card }) => {
         
                 <div className='flex justify-start gap-2.5'>
                     {card.types && card.types.map((type) => (
-                        <div className='flex gap-2 items-center sm:text-xs text-sm'>
+                        <div key={type} className='flex gap-2 items-center sm:text-xs text-sm'>
                             <Type icon={types[type].icon} color={types[type].color} type={type}/>   
                         </div>
                 

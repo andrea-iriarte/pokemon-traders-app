@@ -6,12 +6,11 @@ import Homepage from './pages/Homepage.jsx'
 
 import { Auth0Provider } from '@auth0/auth0-react'
 
+const domain = import.meta.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = import.meta.env.REACT_APP_AUTH0_CLIENT_ID;
+const redirectUri = import.meta.env.REACT_APP_AUTH0_CALLBACK_URL;
 
-    const domain = import.meta.env.REACT_APP_AUTH0_DOMAIN;
-    const clientId = import.meta.env.REACT_APP_AUTH0_CLIENT_ID;
-    const redirectUri = import.meta.env.REACT_APP_AUTH0_CALLBACK_URL;
 
-    
 
     
 

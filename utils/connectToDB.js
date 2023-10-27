@@ -1,17 +1,31 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
 
 const uri = "mongodb+srv://airiartenavarro:neW6K5fQAK29Cslw@pokemontraders.gi5nrdr.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri);
 
-export const run = async () => {
-    try {
-        await client.connect();
-        await client.db("admin").command({ ping: 1});
-        console.log("Connected to MongoDB");
-    } finally {
-        await client.close();
+let isConnected = false;
+
+export const connectToDB = async () => {
+    //mongoose.set('strictQuery', true);
+
+    if(isConnected) {
+        console.log("MongoDB is already connected");
+        return;
     }
 
+    try {
+        await mongoose.connect((uri), {
+            dbName: "pokemon_traders",
+            useNewUrlParser: true,
+            
+        })
+
+        isConnected = true;
+        console.log("MongoDB connected");
+    } catch (error) {
+        console.log(error);
+    }
 }
+
+connectToDB();
 
