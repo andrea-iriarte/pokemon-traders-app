@@ -9,7 +9,7 @@ export const rarities = {
     "Rare Holo": 'from-blue-500 via-purple-500 to-gray-300',
     "Rare Holo EX": 'from-blue-500 via-purple-500 to-pink-400',
     "Rare Holo GX": 'from-blue-500 via-purple-500 to-green-400',
-    "Rare Holo LV.X": '',
+    "Rare Holo LV.X": 'from-red-500 via-purple-700 to-gray-500',
     "Rare Holo V": 'from-blue-500 via-purple-500 to-yellow-500',
     "Rare Holo MAX": '',
     "Rare Holo Star": '',

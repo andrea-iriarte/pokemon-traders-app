@@ -5,6 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import LogoutButton from './buttons/logout-button'
 import Search from './Search'
 import SearchParameters from './SearchParameters'
+import { AiOutlineMenu } from 'react-icons/ai'
 const Header = ({ setSearch, setPage, setParameters, parameters }) => {
     
   const reset = () => {
@@ -23,7 +24,7 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
         via-purpl-500  to-green-400 cursor-pointer tracking-tight ' onClick={reset}>
             Pokemon Traders
         </h1>
-        <div className='flex gap-2'>
+        <div className='sm:flex gap-2  hidden'>
           {!isAuthenticated ? (
           <>
             <LoginButton />
@@ -34,6 +35,12 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
           </>
           )}
          
+        </div>
+
+        <div className='sm:hidden flex'>
+            <AiOutlineMenu 
+              className='text-green-400/70 text-2xl cursor-pointer'
+            />
         </div>
         
         

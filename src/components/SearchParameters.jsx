@@ -10,6 +10,9 @@ const DropdownMenu = ({ param, setParameters, parameters, setPage }) => {
     
     const handleClick = (item) => {
         const newParams = parameters;
+        if(item === "- - - - -") {
+            item = null;
+        }
         newParams[param.name] = item;
         console.log(newParams);
         setParameters(newParams);
@@ -64,19 +67,19 @@ useEffect(() => {
             const searchParams = [
                 {
                     name: "supertype",
-                    variants: supertypes
+                    variants: ["- - - - -", ...supertypes]
                 },
                 {
                     name: "subtype",
-                    variants: subtypes
+                    variants: ["- - - - -", ...subtypes]
                 },
                 {
                     name: "type",
-                    variants: types
+                    variants: ["- - - - -", ...types]
                 },
                 {
                     name: "rarity",
-                    variants: rarities
+                    variants: ["- - - - -", ...rarities]
                 },
             ]
     

@@ -28,7 +28,7 @@ const Homepage = () => {
 
   useEffect (() => {
 
-    const query = `${parameters.type ? "types:".concat(parameters.type): ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} supertype:${parameters.supertype} `;
+    const query = `${parameters.type ? "types:".concat(parameters.type): ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} ${parameters.supertype ? "supertype:".concat(parameters.supertype) : "supertype:pokemon"} `;
     const apiUrl = "https://api.pokemontcg.io/v2/cards?q=".concat(query);
 
     const apiRequest = async () => {
