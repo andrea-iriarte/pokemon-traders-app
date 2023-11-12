@@ -14,6 +14,8 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
   }
 
   const { isAuthenticated } = useAuth0();
+
+  const menuIsClicked = false;
     
   return (
     
@@ -37,10 +39,26 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
          
         </div>
 
-        <div className='sm:hidden flex'>
+        <div className='sm:hidden flex flex-col  w-[2.5rem] rounded-full hover:bg-green-400/10 items-center justify-center'>
             <AiOutlineMenu 
               className='text-green-400/70 text-2xl cursor-pointer'
+              onClick={() => menuIsClicked = !menuIsClicked}
             />
+
+           {menuIsClicked && 
+            <div>
+              {isAuthenticated ? (
+                <>
+                  <SignUpButton />
+                  <LoginButton />
+                </>
+              ) : (
+                <>
+                  <LogoutButton />
+                </>
+              )}
+            </div>
+          }
         </div>
         
         

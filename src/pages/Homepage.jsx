@@ -28,7 +28,7 @@ const Homepage = () => {
 
   useEffect (() => {
 
-    const query = `${parameters.type ? "types:".concat(parameters.type): ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} ${parameters.supertype ? "supertype:".concat(parameters.supertype) : "supertype:pokemon"} `;
+    const query = `${parameters.type ? "types:".concat(parameters.type): ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} ${parameters.supertype ? "supertype:".concat(parameters.supertype) : ""} `;
     const apiUrl = "https://api.pokemontcg.io/v2/cards?q=".concat(query);
 
     const apiRequest = async () => {
@@ -60,13 +60,11 @@ const Homepage = () => {
       
       <SearchParameters setParameters={setParameters} parameters={parameters} setPage={setPage} />
 
-      <div className='flex flex-wrap gap-6 justify-center'>
-        {filteredResults ? (filteredResults.map((card) => (
+      <div className='flex flex-wrap gap-6 justify-center w-full'>
+        {cards.length > 0 ? (cards.map((card) => (
           <PokemonCard card={card} key={card.id}/>
         ))) : (
-          cards.map((card) => (
-            <PokemonCard card={card} key={card.id}/>
-          ))
+          <p className='text-green-400/60'>No cards found.</p>
         )}
       </div>
 

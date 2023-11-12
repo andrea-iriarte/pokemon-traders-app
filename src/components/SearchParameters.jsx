@@ -12,6 +12,9 @@ const DropdownMenu = ({ param, setParameters, parameters, setPage }) => {
         const newParams = parameters;
         if(item === "- - - - -") {
             item = null;
+        } else {
+            item = item.replace(" ", "");
+            item = item.toLowerCase();
         }
         newParams[param.name] = item;
         console.log(newParams);
@@ -94,7 +97,7 @@ useEffect(() => {
     
 }, [])
   return (
-    <div className='w-full h-[10rem] flex gap-3 justify-start mt-0 pt-0'>
+    <div className='w-full h-[10rem] flex gap-3 mt-0 pt-0 sm:overflow-x-visible overflow-x-auto sm:justify-start justify-center'>
        { 
             searchParameters.map((item) => (
                 <DropdownMenu key={item.name} param={item} setParameters={setParameters} parameters={parameters} setPage={setPage} />
