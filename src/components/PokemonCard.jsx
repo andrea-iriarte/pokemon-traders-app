@@ -42,7 +42,7 @@ const PokemonCardFront = ({ card }) => {
  
                 <div 
                 
-                className={` rounded-[10px]  h-[80%]`}>
+                className={` rounded-[10px]  h-[80%] overflow-y-hidden sm:overflow-y-visible`}>
                 
                     <img src={card.images.small} alt="" className=' rounded-[10px] shadow-xl h-auto w-[100%]'/>
                 
@@ -99,7 +99,7 @@ const PokemonCard = ({ card }) => {
                     whileHover={{ scale: [null, 1.1, 1.05]}}
                     transition={{ duration: 0.1}}
                     key={card.id}
-                    className='flex  sm:w-[15rem] w-[20rem] sm:h-[27rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-20 hover:bg-gradient-to-br hover:from-green-400/20 hover:via-indigo-500/20 hover:to-pink-600/20 
+                    className='flex sm:w-[15rem] w-full sm:h-[27rem] h-[33rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-20 hover:bg-gradient-to-br hover:from-green-400/20 hover:via-indigo-500/20 hover:to-pink-600/20 
                     
                     hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
