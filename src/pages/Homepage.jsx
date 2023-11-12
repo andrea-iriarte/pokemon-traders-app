@@ -28,7 +28,7 @@ const Homepage = () => {
 
   useEffect (() => {
 
-    const query = `${parameters.type ? "types:".concat(parameters.type) : ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} supertype:${parameters.supertype} `;
+    const query = `${parameters.type ? "types:".concat(parameters.type): ""} ${parameters.subtype ? "subtypes:".concat(parameters.subtype) : ""} ${parameters.rarity ? "rarity:".concat(parameters.rarity) : ""} supertype:${parameters.supertype} `;
     const apiUrl = "https://api.pokemontcg.io/v2/cards?q=".concat(query);
 
     const apiRequest = async () => {
@@ -54,7 +54,7 @@ const Homepage = () => {
   
     
   return (
-    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b  via-purple-900 from-indigo-900 to-black flex  justify-start flex-wrap p-7 pb-[4rem]'>
+    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b bg-blak via-purple-900 from-indigo-900 to-black flex  justify-start flex-wrap p-7 pb-[4rem]'>
       
       <Header setSearch={setSearch} setPage={setPage} setParameters={setParameters} parameters={parameters}/>
       

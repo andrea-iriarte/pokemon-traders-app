@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 
 
@@ -12,7 +13,7 @@ body {
 }
 
 h1 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
 }
 
 /* width */
@@ -38,5 +39,6 @@ h1 {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(156, 67%, 60%);
+    background: hsl(257, 81%, 23%);
+    opacity: 10%;
   }

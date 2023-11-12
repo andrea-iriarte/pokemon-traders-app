@@ -20,7 +20,7 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
 
       <div className='flex justify-between w-full items-center'>
         <h1 className='text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-400  
-        via-purple-500 to-green-400 cursor-pointer tracking-tight ' onClick={reset}>
+        via-purpl-500  to-green-400 cursor-pointer tracking-tight ' onClick={reset}>
             Pokemon Traders
         </h1>
         <div className='flex gap-2'>

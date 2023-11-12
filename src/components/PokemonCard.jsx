@@ -27,7 +27,7 @@ const PokemonCardFront = ({ card }) => {
                         }
                         
                         {card.subtypes && (
-                            <p className='text-gray-400 text-sm'>
+                            <p className='text-green-400/80 italic text-sm'>
                                 {card.subtypes[0]}
                             </p>
                         )}
@@ -44,7 +44,7 @@ const PokemonCardFront = ({ card }) => {
                 
                 className={` rounded-[10px]  h-[80%]`}>
                 
-                    <img src={card.images.small} alt="" className=' rounded-[10px] shadow-xl h-[100%] w-[100%]'/>
+                    <img src={card.images.small} alt="" className=' rounded-[10px] shadow-xl h-auto w-[100%]'/>
                 
                 </div>
             
@@ -99,7 +99,7 @@ const PokemonCard = ({ card }) => {
                     whileHover={{ scale: [null, 1.1, 1.05]}}
                     transition={{ duration: 0.1}}
                     key={card.id}
-                    className='flex  sm:w-[15rem] w-[20rem] sm:h-[20rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-30 hover:bg-gradientto-br hover:from-green-400/10 hover:via-indigo-800/20 hover:to-pink-600/20 
+                    className='flex  sm:w-[15rem] w-[20rem] sm:h-[27rem] h-[24rem] rounded-[10px] justify-around shadow-2xl py-11 px-5 bg-black bg-opacity-20 hover:bg-gradient-to-br hover:from-green-400/20 hover:via-indigo-500/20 hover:to-pink-600/20 
                     
                     hover:shadow-4xl flex-col gap-3   hover:cursor-pointer ' onClick={() => {}}>
                     
