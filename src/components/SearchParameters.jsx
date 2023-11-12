@@ -97,7 +97,7 @@ useEffect(() => {
     
 }, [])
   return (
-    <div className='w-full h-[10rem] flex gap-3 mt-0 pt-0 sm:overflow-x-visible overflow-x-auto sm:justify-start justify-center'>
+    <div className='w-full h-[10rem] flex gap-3 mt-0 pt-0 sm:overflow-x-visible overflow-x-scroll justify-start '>
        { 
             searchParameters.map((item) => (
                 <DropdownMenu key={item.name} param={item} setParameters={setParameters} parameters={parameters} setPage={setPage} />
