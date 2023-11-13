@@ -22,7 +22,7 @@ const Homepage = () => {
   });
   const [search, setSearch] = useState('');
 
-  const { supertype, type } = parameters;
+  const { supertype, type, subtype, rarity } = parameters;
 
  
 
@@ -42,7 +42,7 @@ const Homepage = () => {
 
     console.log(parameters.supertype);
     console.log(page);
-  }, [page, supertype, type])
+  }, [page, supertype, type, rarity, subtype])
   
 
  useEffect(() => {

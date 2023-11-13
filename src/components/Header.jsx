@@ -24,8 +24,8 @@ const Header = ({ setSearch, setPage, setParameters, parameters }) => {
       <div className='flex justify-between w-full items-center'>
         <div className='flex gap-3 cursor-pointer items-center' onClick={reset}>
           <img src="poke.png" alt="" height="36px" width="36px"/>
-            <h1 className='text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-400  
-          via-purpl-500  to-green-400 tracking-tight'>
+            <h1 className='text-center sm:text-3xl text-2xl text-transparent bg-clip-text bg-gradient-to-r from-green-400  
+          via-purple-400  to-green-400 '>
               Pokemon Traders
           </h1>
         </div>
