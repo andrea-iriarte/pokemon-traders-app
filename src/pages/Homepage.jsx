@@ -54,7 +54,7 @@ const Homepage = () => {
   
     
   return (
-    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b bg-blak via-purple-900 from-indigo-900 to-black flex  justify-start flex-wrap p-7 pb-[4rem]'>
+    <div className='w-full h-[100vh] overflow-auto bg-gradient-to-b bg-blak via-purple-900 from-indigo-900 to-teal-900 flex  justify-start flex-wrap p-7 pb-[4rem]'>
       
       <Header setSearch={setSearch} setPage={setPage} setParameters={setParameters} parameters={parameters}/>
       
